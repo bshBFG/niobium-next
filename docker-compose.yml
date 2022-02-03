@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:13
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: niobium
+      POSTGRES_USER: niobium
+      POSTGRES_PASSWORD: niobium
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
